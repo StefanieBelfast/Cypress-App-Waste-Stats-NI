@@ -89,7 +89,9 @@ describe('maps moving 2', () => {
         cy.get('.map')
         .contains(12).click({force: true}).click
         cy.get('.map')
-        .should('#128').click({force: true}).click
+        ///.get('.marker-cluster')
+        ///  .get('#511')//.click({force: true}).click
+        /// try to catch the Item with Indexnr.
     })
 
     it('*test the sign/Civic', () => {
