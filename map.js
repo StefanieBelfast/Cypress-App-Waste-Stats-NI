@@ -24,21 +24,21 @@ describe('maps moving 1', () => {
         cy.get('.leaflet-map-pane')
         cy.get('.leaflet-top')
         cy.get('.leaflet-bottom')
-        //get
+        //get the top/left Button +/-
     })
 
-    
+
     it('correctly sighn', () => {
             
         cy.get('.leaflet-zoom-animated')
         cy.get('.leaflet-tile-loaded')
-            //linien auf der Karte
+            //lines of the map
         cy.get('.leaflet-marker-shadow')
-            // ist der pfeil, which is animated(zoom)
+            // pointer, which is animated(zoom)
         cy.get('.leaflet-interactive')
             // umrandeten Gebiete
         cy.get('.leaflet-marker-icon')
-            // ist der pfeil , der pointed with text
+            // pointer , der pointed with text
         cy.get('.leaflet-control-attribution')
             //link bottom, right
     })
