@@ -67,20 +67,22 @@ describe('maps moving 2', () => {
         cy.contains('Councils').click()
 
         cy.get('.map')
-        .click(617,372,{force: true})
-        .click(617,372)
+        .click(486,372,{force: true})
+        .click(486,372,{force: true})
+        //cy.get('.leaflet-popup-content')//.contains('Newry')
 
         cy.get('.map')
-        .click(452,138,{force: true})
-        .click(452,138,{force: true})
-        //cy.get('.leaflet-popup').contains('Mid and')
+        .click(500,155,{force: true})
+        .click(500,155,{force: true})
+        //cy.get('.leaflet-popup')//.contains('Mid and')
 
         cy.get('.map')
-        .click(209, 318, {force: true})
-        .click(209, 318)
+        .click(251, 318, {force: true})
+        .click(251, 318, {force: true})
+        //cy.get('.leaflet-popup').contains('Fermanagh')
         //nr. are the koordination of the frame form the map
         //{force: true} is in because of their is a element covered
-        //cy.get('.leaflet-popup').contains('Fermanagh')   
+           
     })
 
     it('*test the sign/Lanfill', () => {
@@ -88,13 +90,13 @@ describe('maps moving 2', () => {
         cy.contains('Landfill sites').click()
 
         cy.get('.map')
-        .click(300,44,{force: true})
-        .click(300,44)
-        //cy.get('.leaflet-popup').contains('Landfill Tonnage:0')
+        .click(519,9,{force: true})
+        .click(519,9)
+        //cy.get('.leaflet-popup-content').contains('Landfill Tonnage:0')
 
         cy.get('.map')
-        .click(120,345,{force: true})
-        .click(120,345)
+        .click(291,234,{force: true})
+        .click(291,234)
         //cy.get('.leaflet-popup').contains('Landfill Tonnage:16036')
     })
 
@@ -116,7 +118,8 @@ describe('maps moving 2', () => {
         cy.contains('Civic Sites').click()
 
         cy.get('.map')
-        .click(554, 137,{force: true})
+        .click(479, 232,{force: true})
+        //cy.get('.leaflet-popup-content')//.contains('Station Road Recycling Centre')
         cy.get('.map')
         //.click({force: true})
         //.click(120,345)
