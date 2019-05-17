@@ -79,7 +79,7 @@ describe('maps moving 2', () => {
         cy.get('.map')
         .click(251, 318, {force: true})
         .click(251, 318, {force: true})
-        //cy.get('.leaflet-popup').contains('Fermanagh')
+        cy.get('.leaflet-popup').contains('Fermanagh')
         //nr. are the koordination of the frame form the map
         //{force: true} is in because of their is a element covered
            
@@ -109,7 +109,7 @@ describe('maps moving 2', () => {
         cy.get('.map')
         .contains(12).click({force: true}).click
         cy.get('.map')
-        ///.get('.marker-cluster')
+        .get('.marker-cluster')
         ///  .get('#511')//.click({force: true}).click
         /// try to catch the Item with Indexnr.
     })
@@ -129,7 +129,7 @@ describe('maps moving 2', () => {
         cy.visit('http://52.209.112.20:8181/#/map')
         cy.contains('Waste Stats NI')
         cy.get('.map')
-        //.click('54.182071,-7.360636')
+        .click('lat=54.182071','lng=-7.360636')
     })
 
     it('counting marker/icons', () => {
