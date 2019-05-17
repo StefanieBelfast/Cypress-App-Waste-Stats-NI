@@ -15,6 +15,7 @@ describe('statistics', () => {
 
     
     it('menu button/drop down', () => {
+        cy.contains('Statistics').click()
         cy.contains('Northern Ireland Civic Site Total')
         cy.contains('Next Year').click()
         //should !!cy.contains('2016/17')
@@ -28,6 +29,7 @@ describe('statistics', () => {
        })
 
     it('changes when "Electrical" removed', () => {
+        cy.contains('Statistics').click()
         cy.contains('Northern Ireland Civic Site Total')
         cy.contains('Next Year').click()
         cy.contains('42%')
@@ -39,6 +41,7 @@ describe('statistics', () => {
         })
 
     it('existent graphics/text, ', () => {
+        cy.contains('Statistics').click()
         cy.contains('Landfill')
         cy.contains('Recycling')
         cy.get('.statsGraphSize').should('have.length', 2)
