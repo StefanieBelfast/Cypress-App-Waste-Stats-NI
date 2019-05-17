@@ -1,8 +1,9 @@
 describe('dashboard', () => {
-    it('Visit the app Waste NI', () => {
-        cy.visit('http://52.209.112.20:8181/#/map')
-        cy.contains('Waste Stats NI')
-    }) 
+//    it('dash', () => {
+//        cy.request('http://52.209.112.20:8181/#/map')
+//      cy.contains('Waste Stats NI')
+//    })
+//if you use a index before, you will not need it 
 
     it('menu items', () => {
         cy.contains('Dashboard')
