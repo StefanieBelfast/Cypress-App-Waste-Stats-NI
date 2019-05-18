@@ -19,8 +19,8 @@ describe('maps moving 1', () => {
         cy.get('.leaflet-fade-anim')
         cy.get('.leaflet-grab')
         cy.get('.leaflet-touch-drag')
-        //cy.get('.claim > .btn-med-secondary').then($el => $el[0].getBoundingRect())
-        //cy.get('.claim > .btn-med-secondary').then($el => $el[0].getBoundingClientRect())
+        //cy.get('.map').then($el => $el[0].getBoundingRect())
+        cy.get('.map').then($el => $el[0].getBoundingClientRect())
         //testing
 
 
@@ -135,8 +135,11 @@ describe('maps moving 2', () => {
     it('*find a town by lat/lng', () => {
         cy.visit('http://52.209.112.20:8181/#/map')
         cy.contains('Waste Stats NI')
-        cy.get('.map')
-        .click('c[lat=54.182071]','c[lng=-7.360636]',{force: true})
+        //cy.get('.map')
+        //.click('c[lat=54.182071]','c[lng=-7.360636]',{force: true})
+        //.click('c[lat=-7.360636]','c[lng=54.182071]',{force: true})
+        cy.get('.map').getXcoordinate("-7.360636");
+        cy.get('.map').getYcoordinate("54.182071");
     })
 
     it('counting marker/icons', () => {
