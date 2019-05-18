@@ -67,9 +67,15 @@ describe('maps moving 2', () => {
         cy.contains('Councils').click()
 
         cy.get('.map')
+        cy.get('.leaflet-marker-icon')
+        //.children('img[src="static/councilicon2.png"]')
+
+        cy.get('.map')
         .click(486,372,{force: true})
         .click(486,372,{force: true})
-        //cy.get('.leaflet-popup-content')//.contains('Newry')
+        .click(372,486,{force: true})
+        .click(372,486,{force: true})
+        cy.get('.leaflet-popup-content')//.contains('Newry')
 
         cy.get('.map')
         .click(500,155,{force: true})
@@ -79,7 +85,7 @@ describe('maps moving 2', () => {
         cy.get('.map')
         .click(251, 318, {force: true})
         .click(251, 318, {force: true})
-        cy.get('.leaflet-popup').contains('Fermanagh')
+        //cy.get('.leaflet-popup')//.contains('Fermanagh')
         //nr. are the koordination of the frame form the map
         //{force: true} is in because of their is a element covered
            
@@ -103,13 +109,14 @@ describe('maps moving 2', () => {
     it('*test the sign/Treatment', () => {
         //issue, what will u do if u ve twice a number/idea indexnr.=ID=#
         cy.contains('Treatment sites').click()
-
+        cy.get('.marker-cluster').should('have.length', 13)
         cy.get('.map')
         .contains(170).click({force: true})
+        cy.get('.marker-cluster').should('have.length', 13)
         cy.get('.map')
         .contains(12).click({force: true}).click
         cy.get('.map')
-        .get('.marker-cluster')
+        .get('.marker-cluster').should('have.length', 54)
         ///  .get('#511')//.click({force: true}).click
         /// try to catch the Item with Indexnr.
     })
@@ -129,7 +136,7 @@ describe('maps moving 2', () => {
         cy.visit('http://52.209.112.20:8181/#/map')
         cy.contains('Waste Stats NI')
         cy.get('.map')
-        .click('lat=54.182071','lng=-7.360636')
+        .click('c[lat=54.182071]','c[lng=-7.360636]',{force: true})
     })
 
     it('counting marker/icons', () => {
