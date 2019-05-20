@@ -61,31 +61,41 @@ describe('maps moving 1', () => {
 describe('maps moving 2', () => {
     const mapSelector = '.map';
     //.map = the same as 'class=map'
+/// TO GET THE RIGHT POINT
+/// take the pixel minus the half of the box pixel, so you will get the right cordinations
 
-    it('*test the sign Councils', () => {
+    it('test the sign Councils.1', () => {
         cy.visit('http://52.209.112.20:8181/#/map')
         cy.contains('Councils').click()
 
         cy.get('.map')
         cy.get('.leaflet-marker-icon')
         //.children('img[src="static/councilicon2.png"]')
-
-        cy.get('.leaflet-overlay-pane')
-        .click(486,372,{force: true})
-        .click(486,372,{force: true})
-        .click(372,486,{force: true})
-        .click(372,486,{force: true})
-        //cy.get('.leaflet-popup-content').contains('Newry')
-
-        cy.get('.leaflet-overlay-pane')
-        .click(500,155,{force: true})
-        .click(500,155,{force: true})
-        //cy.get('.leaflet-popup')//.contains('Mid and')
-
+        cy.wait(500)
         cy.get('.map')
-        .click(251, 318, {force: true})
-        .click(251, 318, {force: true})
-        //cy.get('.leaflet-popup')//.contains('Fermanagh')
+        .click(378,357)
+        .click(378,357)
+        cy.get('.leaflet-popup-content').contains('Newry')
+    })
+
+    it('test the sign Councils.2', () => {
+        cy.visit('http://52.209.112.20:8181/#/map')
+        cy.contains('Councils').click()
+        cy.wait(500)
+        cy.get('.map')
+        .click(383,141)
+        .click(383,141)
+        cy.get('.leaflet-popup').contains('Mid and')
+    })
+
+    it('test the sign Councils.3', () => {
+        cy.visit('http://52.209.112.20:8181/#/map')
+        cy.contains('Councils').click()
+        cy.wait(500)
+        cy.get('.map')
+        .click(134, 304)
+        .click(134, 304)
+        cy.get('.leaflet-popup').contains('Fermanagh')
         //nr. are the koordination of the frame form the map
         //{force: true} is in because of their is a element covered
            
@@ -97,7 +107,6 @@ describe('maps moving 2', () => {
         cy.wait(500)
         cy.get('.map')
         .click(354,77)
-        //.click(375,91,{force: true})
         cy.get('.leaflet-popup-content').contains('Landfill Tonnage:0')
     })
 
@@ -108,7 +117,6 @@ describe('maps moving 2', () => {
         cy.get('.map')
         .click(126,302)
         .click(126,301)
-       
         cy.get('.leaflet-popup').contains('Landfill Tonnage:16036')
     })
 
@@ -123,30 +131,32 @@ describe('maps moving 2', () => {
         .contains(12).click({force: true}).click
         cy.get('.map')
         .get('.marker-cluster').should('have.length', 54)
-        ///  .get('#511')//.click({force: true}).click
-        /// try to catch the Item with Indexnr.
     })
 
-    it('*test the sign/Civic', () => {
+    it('test the sign/Civic.1', () => {
         cy.contains('Civic Sites').click()
 
         cy.get('.map')
-        .click(479, 232,{force: true})
-        //cy.get('.leaflet-popup-content')//.contains('Station Road Recycling Centre')
-        cy.get('.map')
-        //.click({force: true})
-        //.click(120,345)
+        .click(54, 287)
+        cy.get('.leaflet-popup-content').contains('Garrison Civic Amenity Site')
     })     
 
-    it('*find a town by lat/lng', () => {
-        cy.visit('http://52.209.112.20:8181/#/map')
-        cy.contains('Waste Stats NI')
-        cy.get('.leaflet-overlay-pane')
-        .click('c[lat=54.182071]','c[lng=-7.360636]',{force: true})
-        .click('c[lat=-7.360636]','c[lng=54.182071]',{force: true})
-        //cy.get('.map').getXcoordinate("-7.360636");
-        //cy.get('.map').getYcoordinate("54.182071");
-    })
+    it('test the sign/Civic.2', () => {
+        cy.contains('Civic Sites').click()
+
+        cy.get('.map')
+        .click(288,47)
+        cy.get('.leaflet-popup-content').contains('Castlerock Civic Amenity Site')
+    })   
+
+    it('test the sign/Civic.3', () => {
+        cy.contains('Civic Sites').click()
+
+        cy.get('.map')
+        .click(240, 228)
+        cy.get('.leaflet-popup-content').contains('Civic Site Name:Carrickmore Household Recycling Centre')
+    })   
+
 
     it('counting marker/icons', () => {
         cy.contains('Councils').click()
