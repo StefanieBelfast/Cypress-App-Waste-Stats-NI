@@ -70,14 +70,14 @@ describe('maps moving 2', () => {
         cy.get('.leaflet-marker-icon')
         //.children('img[src="static/councilicon2.png"]')
 
-        cy.get('.map')
+        cy.get('.leaflet-overlay-pane')
         .click(486,372,{force: true})
         .click(486,372,{force: true})
         .click(372,486,{force: true})
         .click(372,486,{force: true})
-        cy.get('.leaflet-popup-content')//.contains('Newry')
+        //cy.get('.leaflet-popup-content').contains('Newry')
 
-        cy.get('.map')
+        cy.get('.leaflet-overlay-pane')
         .click(500,155,{force: true})
         .click(500,155,{force: true})
         //cy.get('.leaflet-popup')//.contains('Mid and')
@@ -106,7 +106,7 @@ describe('maps moving 2', () => {
         //cy.get('.leaflet-popup').contains('Landfill Tonnage:16036')
     })
 
-    it('*test the sign/Treatment', () => {
+    it('test the sign/Treatment', () => {
         //issue, what will u do if u ve twice a number/idea indexnr.=ID=#
         cy.contains('Treatment sites').click()
         cy.get('.marker-cluster').should('have.length', 13)
@@ -135,11 +135,11 @@ describe('maps moving 2', () => {
     it('*find a town by lat/lng', () => {
         cy.visit('http://52.209.112.20:8181/#/map')
         cy.contains('Waste Stats NI')
-        //cy.get('.map')
-        //.click('c[lat=54.182071]','c[lng=-7.360636]',{force: true})
-        //.click('c[lat=-7.360636]','c[lng=54.182071]',{force: true})
-        cy.get('.map').getXcoordinate("-7.360636");
-        cy.get('.map').getYcoordinate("54.182071");
+        cy.get('.leaflet-overlay-pane')
+        .click('c[lat=54.182071]','c[lng=-7.360636]',{force: true})
+        .click('c[lat=-7.360636]','c[lng=54.182071]',{force: true})
+        //cy.get('.map').getXcoordinate("-7.360636");
+        //cy.get('.map').getYcoordinate("54.182071");
     })
 
     it('counting marker/icons', () => {
@@ -162,7 +162,7 @@ describe('maps moving 2', () => {
 
     it('counting districts/areas', () => {
         cy.contains('Overall').click()
-        cy.get('.map')
+        cy.get('.leaflet-pane')
         .find('path.leaflet-interactive').should('have.length', 11)
     })    
 })
