@@ -91,19 +91,25 @@ describe('maps moving 2', () => {
            
     })
 
-    it('*test the sign/Lanfill', () => {
+    it('test the sign/Lanfill.1', () => {
         cy.visit('http://52.209.112.20:8181/#/map')
         cy.contains('Landfill sites').click()
-
+        cy.wait(500)
         cy.get('.map')
-        .click(519,9,{force: true})
-        .click(519,9)
-        //cy.get('.leaflet-popup-content').contains('Landfill Tonnage:0')
+        .click(354,77)
+        //.click(375,91,{force: true})
+        cy.get('.leaflet-popup-content').contains('Landfill Tonnage:0')
+    })
 
+    it('test the sign/Lanfill.2', () => {
+        cy.visit('http://52.209.112.20:8181/#/map')
+        cy.contains('Landfill sites').click()
+        cy.wait(500)
         cy.get('.map')
-        .click(291,234,{force: true})
-        .click(291,234)
-        //cy.get('.leaflet-popup').contains('Landfill Tonnage:16036')
+        .click(126,302)
+        .click(126,301)
+       
+        cy.get('.leaflet-popup').contains('Landfill Tonnage:16036')
     })
 
     it('test the sign/Treatment', () => {
@@ -162,8 +168,8 @@ describe('maps moving 2', () => {
 
     it('counting districts/areas', () => {
         cy.contains('Overall').click()
-        cy.get('.leaflet-interactive')
-        //.find('path.leaflet-interactive')
-        //.should('have.length', 11)
+        cy.wait(500)
+        cy.get('.map')
+        .find('path.leaflet-interactive').should('have.length', 11)
     })    
 })
