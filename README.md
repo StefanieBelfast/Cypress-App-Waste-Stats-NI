@@ -30,7 +30,7 @@ Visual Studio Code
 
 **/leaflet.pm-develop package.json** ->to see the dependencies & commands
 
-**/leaflet.pm-develop/cypress/support index.js** ->inside is a "before each" loop
+**/leaflet.pm-develop/cypress/support index.js** ->is a "before each" loop
 >meaning is this loop is running before each testing sequence (you can change it for your own testing;for example, i did everywhere a commanding except the Website, see Github index.js)
 ## deleting the test files from the example
 **/leaflet.pm-develop/cypress/integration testfile.js**
