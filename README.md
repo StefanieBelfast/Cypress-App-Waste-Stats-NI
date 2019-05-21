@@ -43,7 +43,7 @@ Visual Studio Code
 
 **in npm-debug.log -> you will find the errors**
 
-**/leaflet.pm-develop/cypress/screencshots ->you will find screenshots from error**
+**/leaflet.pm-develop/cypress/screenshots ->you will find screenshots from error**
 # TEST
 I'm testing features on this website [Waste Stats NI](http://52.209.112.20:8181/#/map)
 
@@ -101,7 +101,7 @@ tests if "leaflet-map-pane" exist and on it "leaflet-top","leaflet-bottom" is
 tests if "leaflet-zoom-animated", "geleaflet-tile-loaded"(lines of the map),"leaflet-marker-shadow"(pointer, which is animated(zoom)),"leaflet-interactive"(lined areas),"leaflet-marker-icon"(pointer with text),"leaflet-control-attribution"(link bottom,right) exist
 
 **maps moving 2**
->NICE TO KNOW; to get th right point, if you have item/circle/square etc. its coming up as a reacle/square in the map(pixel you find in quelltext),they pointing (in my case)the right bottom corner out(because my pixel coordis 0x0 is in left/top) so you have to take the pixel minus the half of the box pixel, you will get the right cordinations
+>NICE TO KNOW; to get the right point, if you have item/circle/square etc. its coming up as a rectangle/square in the map(pixel you find in source code),they pointing (in my case)the right bottom corner out(because my pixel coordination 0x0 is in left/top) so you have to take the pixel minus the half of the box pixel, you will get the right coordination
 
 **test the sign Councils.1** 
 clicking on "Concils", test if "leaflet-marker-icon" exist, wait 5sec,click on this coordination, which contains words
