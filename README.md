@@ -9,29 +9,44 @@ Visual Studio Code
 
 ## Websites with informations:
 [official cypress website](https://www.cypress.io/)
+
 [example for tests](https://medium.com/geoman-blog/testing-maps-e2e-with-cypress-ba9e5d903b2b)
+
 **answer/question for issue**
+
 [stackoverflow](https://stackoverflow.com/)
+
 [Github](https://github.com/)
+
 **Youtube**
+
 [using leaflet](https://www.youtube.com/results?search_query=using+leaflet+in+r+part+1+of+6+)
+
 [handout to the video](http://seankross.com/slides/Developing_Data_Products/leaflet/leaflet.html#1)
 ## download/clone example from Github
 [example](https://github.com/codeofsumit/leaflet.pm) codeofsumit/leaflet.pm
+
 **look in**
+
 **/leaflet.pm-develop package.json** ->to see the dependencies & commands
+
 **/leaflet.pm-develop/cypress/support index.js** ->inside is a "before each" loop
 >meaning is this loop is running before each testing sequence (you can change it for your own testing;for example, i did everywhere a commanding except the Website, see Github index.js)
 ## deleting the test files from the example
 **/leaflet.pm-develop/cypress/integration testfile.js**
+
 **create a new test file**
 ## run test
 **npm run cypress** ->test runs on cypress(gui)
+
 **npm run test** ->test runs on terminal
+
 **in npm-debug.log -> you will find the errors**
+
 **/leaflet.pm-develop/cypress/screencshots ->you will find screenshots from error**
 # TEST
 I'm testing features on this website [Waste Stats NI](http://52.209.112.20:8181/#/map)
+
 I did the test site by site, you have at the left hand side 4 buttons(my 4 tests) and an extra test for the map
 ## DASHBOARD.js
 **menu items** 
@@ -84,6 +99,7 @@ tests if "leaflet-map-pane" exist and on it "leaflet-top","leaflet-bottom" is
 
 **correctly sighn** 
 tests if "leaflet-zoom-animated", "geleaflet-tile-loaded"(lines of the map),"leaflet-marker-shadow"(pointer, which is animated(zoom)),"leaflet-interactive"(lined areas),"leaflet-marker-icon"(pointer with text),"leaflet-control-attribution"(link bottom,right) exist
+
 **maps moving 2**
 >NICE TO KNOW; to get th right point, if you have item/circle/square etc. its coming up as a reacle/square in the map(pixel you find in quelltext),they pointing (in my case)the right bottom corner out(because my pixel coordis 0x0 is in left/top) so you have to take the pixel minus the half of the box pixel, you will get the right cordinations
 
@@ -119,3 +135,5 @@ clicking on "Councils", count "leaflet-marker-icon" in "map" which should be 12,
 
 **counting districts/areas** 
 clicking on "Overall",wait 5sec, count "path.leaflet-interactive" in "map" which should be 11
+
+
